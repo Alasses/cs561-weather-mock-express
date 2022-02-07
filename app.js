@@ -36,8 +36,11 @@ app.get("/v1/hello", verifyAuth, (req, res) => {
     else
     {
       res.status(200);
-      res.header("Content-Type", "text/plain");
-      res.send("Hello there, and Welcome!");
+      res.header("Content-Type", "application/json");
+      res.send({
+        "msg": "Hi",
+        "secret": 114514
+      });
     }
   });
 
